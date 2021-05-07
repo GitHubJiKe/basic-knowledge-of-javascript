@@ -6,6 +6,10 @@ const num = 20;
 
 console.log(typeof num === "number"); // true
 
+console.log(typeof NaN === "number"); // true
+
+console.log(NaN === NaN); // false
+
 const booleanVal = true;
 
 console.log(typeof booleanVal === "boolean"); // true
@@ -19,6 +23,8 @@ console.log(none === null); // true
 let notDefined = undefined;
 
 console.log(typeof notDefined === "undefined"); // true
+
+console.log(notDefined === undefined); // true
 
 const unique = Symbol("unique");
 
@@ -199,3 +205,15 @@ if (a == 1 && a == 2 && a == 3) {
   // 这里会打印
   console.log("Yes!");
 }
+
+/**
+ * 数字数组去重
+ * @param {*} arr
+ */
+function removeRepeatNum(arr = []) {
+  return [...new Set(arr)];
+}
+
+const origionArr = [1, 1, 1, 2, 3, 4, 5, 6, 6, 7];
+
+console.log(removeRepeatNum(origionArr)); // [1,2,3,4,5,6,7]

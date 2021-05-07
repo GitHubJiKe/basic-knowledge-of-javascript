@@ -10,6 +10,8 @@
 - Symbol ES6 新加入
 - BigInt ES10 新加入
 
+> 注意 number 类型内的特殊值：[NaN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN)
+
 ## 复杂数据类型
 
 - Array 数组
@@ -17,8 +19,24 @@
 - Date 日期
 - RegExp 正则
 - Function 函数
-- Map ES6 新加入
-- Set ES6 新加入
+- Map [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- Set [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set)
+
+> 关于 Set 常用于数字数组去重
+
+```javascript
+/**
+ * 数字数组去重
+ * @param {*} arr
+ */
+function removeRepeatNum(arr = []) {
+  return [...new Set(arr)];
+}
+
+const origionArr = [1, 1, 1, 2, 3, 4, 5, 6, 6, 7];
+
+console.log(removeRepeatNum(origionArr)); // [1,2,3,4,5,6,7]
+```
 
 ## 数据类型的判断
 
